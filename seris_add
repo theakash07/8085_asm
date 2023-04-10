@@ -1,0 +1,16 @@
+;program to add series of numebr
+;sky signing in!
+lxi h,2000h;first address
+mvi c,0ah;counter
+mvi a,00h;sum=0
+mvi b,00h;for carry 
+back:add m;
+jnc skip;
+inr b;
+skip:inx h;
+dcr c;
+jnz back;
+mov m,a;
+inx h;
+mov m,b;
+hlt;
