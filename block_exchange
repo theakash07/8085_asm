@@ -1,0 +1,15 @@
+;program of block exchange 
+;sky signing in!
+lxi b,2000h ;blocks of data
+lxi d,2010h ;blocks of data
+mvi l,0ah ;counter
+back:ldax b;
+mov h,a;
+ldax d;
+stax b;
+mov a,h;
+stax d;
+inx b;
+inx d;
+dcr l;
+jnz back;
