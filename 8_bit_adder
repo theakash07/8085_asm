@@ -1,0 +1,22 @@
+;program to sort a series
+;sky
+mvi b,04h;outer loop count
+back2:mvi c,04h;inner loop count
+lxi h,2000h;initialisation of hl pair,memory pointe
+back1:mov a,m;a =1st number.
+inx h;m= 2nd number.
+cmp m;1 st num - 2nd num.
+jc skip;(if first number is smaller).
+
+jz skip; if they are equal 
+mov d,m; d=2nd number
+mov m,a; m gets 1st number
+dcx h;m points first number
+mov m,d; first position gets second numebr
+inx h;m points to second location
+
+skip:dcr c ; decreament inner count
+jnz back1;inner loop
+dcr b; dcreament outer loop count
+jnz back2;outer loop
+hlt
