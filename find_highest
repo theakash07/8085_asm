@@ -1,0 +1,12 @@
+;program to find highest among number
+;sky signing in!
+lxi h,2000h;first address
+mvi c,0ah;counter
+mvi a,00h;initialised a as 00
+back:cmp m;[a-m]
+jnc skip
+mov a,m;
+skip:inx h;
+dcr c;
+jnz back;
+mov m,a;
