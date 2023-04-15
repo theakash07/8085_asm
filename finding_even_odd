@@ -1,0 +1,20 @@
+;program to find odd nd even
+;sky signing in!
+lxi h,2000h;first address
+mvi c,0ah; counter
+mvi b,00h; odd
+mvi d,00h;even
+back:mov a,m;
+rrc ; rotate right carry
+jc odd;
+inr d;
+jmp skip;
+
+odd:inr b;
+skip: inx h;
+dcr c;
+jnz back;
+mov m,d;
+inx h;
+mov m,b;
+hlt;
